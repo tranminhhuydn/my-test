@@ -7,6 +7,7 @@ var result = require('../model/result');
 router.get('/', function(req, res) {
     console.log('list users called');
     userDAO.list(function (users) {
+        console.log('users',users)
         res.json(result.createResult(true, users));
     });
 });
